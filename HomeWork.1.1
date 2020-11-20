@@ -1,0 +1,41 @@
+//Начальный вклад в банке равен 10000 грн Через
+//каждый месяц размер вклада увеличивается на P
+//процентов от имеющейся суммы (P — вещественное
+//число, 0 < P < 25) Значение Р программа должна получать у пользователя По данному P определить через
+//сколько месяцев размер вклада превысит 11000 грн ,
+//и вывести найденное количество месяцев K (целое
+//число) и итоговый размер вклада S (вещественное число)
+
+using System;
+
+namespace HomeWork.1.1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float bank = 10000;
+            float p, limit;
+            int k=0;
+            string str;
+            Console.WriteLine("Bank=" + bank + '$');
+            Console.WriteLine("Input % (0.01-25.00)");
+            do
+            {
+                str = Console.ReadLine();
+                p = Convert.ToSingle(str);
+                if (p <= 0.00 || p > 25.00)
+                    Console.WriteLine("Error...... Input again!");
+            } while (p <= 0.00 || p > 25.00);
+            Console.WriteLine("How much do you want to get? Enter number: (like 13000)");
+            str = Console.ReadLine();
+            limit = Convert.ToSingle(str);
+            while (bank <= limit)
+            {
+                bank += bank * p / 100;
+                k++;
+            }
+            Console.WriteLine("After " + k + " month you can get " + limit + " monay!");
+        }
+    }
+}
