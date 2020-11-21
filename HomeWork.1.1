@@ -1,0 +1,43 @@
+//Даны целые положительные числа A, B, C Значение
+//этих чисел программа должна запрашивать у пользователя На прямоугольнике размера A*B размещено
+//максимально возможное количество квадратов со
+//стороной C Квадраты не накладываются друг на
+//друга Найти количество квадратов, размещенных на
+//прямоугольнике, а также площадь незанятой части
+//прямоугольника
+//Необходимо предусмотреть служебные сообщения
+//в случае, если в прямоугольнике нельзя разместить ни
+//одного квадрата со стороной С (например, если значение С превышает размер сторон прямоугольника)
+
+using System;
+
+namespace Demo.CS_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c, x, ost;
+            string str;
+            do
+            {
+                Console.Write("Enter A: ");
+                str = Console.ReadLine();
+                a = Convert.ToInt32(str);
+
+                Console.Write("Enter B: ");
+                str = Console.ReadLine();
+                b = Convert.ToInt32(str);
+
+                Console.Write("Enter C: ");
+                str = Console.ReadLine();
+                c = Convert.ToInt32(str);
+            } while (c > a || c > b);
+            
+            x = a / c * b / c;
+            ost = (a * b)-c*c*x;
+            Console.WriteLine("Result= " + x);
+            Console.WriteLine("Ostatok= " + ost);
+        }
+    }
+}
