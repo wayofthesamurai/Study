@@ -1,0 +1,33 @@
+//Преобразовать массив так, чтобы сначала шли все отрицательные элементы, а потом положительные(0 считать положительным)
+
+using System;
+
+namespace DemoCS_2._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int mas = 10;
+            int[] number = new int[mas];
+            Console.WriteLine("Need input 10 numbers! (>0)");
+            for (int i = 0; i < mas; i++)
+            {
+                Console.WriteLine("Enter " + (1+i) + " number");
+                number[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < mas; i++)
+            {
+                Console.Write(number[i] + "  ");
+            }
+            Array.Sort(number);
+            Console.WriteLine();
+            Console.WriteLine("After change");
+            foreach(int i in number)
+            {
+                Console.Write(i + "  ");
+            }
+        }
+    }
+}
