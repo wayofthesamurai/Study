@@ -1,0 +1,66 @@
+//В двумерном массиве порядка M на N поменяйте местами заданные столбцы
+
+using System;
+
+namespace DemoCS_2._4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int line, column;
+            int k = 1;
+            int a, b;
+            
+            
+            Console.WriteLine("Enter line");
+            line = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter column");
+            column = int.Parse(Console.ReadLine());
+
+            int[,] Array = new int[line, column];
+            
+            for (int i = 0; i < line; i++)
+            {
+                
+                for (int j = 0; j < column; j++)
+                {
+                    Array[i, j] = k;
+                    Console.Write(Array[i, j] + " ");
+                    k++;
+                }
+                Console.WriteLine();
+                k = k-column+1;
+                //k = 1;        
+            }
+
+            Console.WriteLine("Input 1 column to change:");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Input 2 column to change:");
+            b = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < line; i++)
+            {
+                    int buf;
+                    buf=Array[i, a-1];
+                    Array[i, a - 1] = Array[i, b - 1];
+                    Array[i, b - 1] = buf;            
+            }
+
+            for (int i = 0; i < line; i++)
+            {
+
+                for (int j = 0; j < column; j++)
+                {
+                   
+                    Console.Write(Array[i, j] + " ");
+                    
+                }
+                Console.WriteLine();
+               
+            }
+
+        }
+    }
+}
