@@ -1,0 +1,48 @@
+//Сжать массив, удалив из него все 0 и, заполнить освободившиеся справа элементы значениями –1
+
+using System;
+
+namespace DemoCS_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //string str;
+            int mas = 10, zero = 0, count = 1;
+            int[] number = new int[mas];
+            Console.WriteLine("Need input 10 numbers! (>0)");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Enter " + count + " number");
+                number[i] = int.Parse(Console.ReadLine());
+                count++;
+            }
+
+            for (int i = 0; i < mas; i++)
+            {
+                Console.Write(number[i] + "  ");
+            }
+            Console.WriteLine();
+            
+            for (int i = 0; i < mas; i++)
+            {
+                if (number[i] == 0) zero++;
+                else number[i - zero] = number[i];
+            }
+
+            for (int i = mas - zero; i < mas; i++)
+            {
+                number[i] = -1;
+            }
+
+            
+            Console.WriteLine("After change");
+            
+            for (int i = 0; i < mas; i++)
+            {
+                Console.Write(number[i] + "  ");
+            }
+        }  
+    }
+}
