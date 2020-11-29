@@ -1,0 +1,34 @@
+//Написать программу, которая предлагает пользователю ввести число и считает, сколько раз это число встречается в массиве
+
+using System;
+
+namespace DemoCS_2_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int mas = 10, counter = 0, dig;
+            int[] number = new int[mas];
+            Console.WriteLine("Enter the number to be counted");
+            dig = int.Parse(Console.ReadLine());
+            Console.WriteLine("Need input 10 numbers! (>0)");
+            for (int i = 0; i < mas; i++)
+            {
+                Console.WriteLine("Enter " + (1 + i) + " number");
+                number[i] = int.Parse(Console.ReadLine());
+            }
+
+            foreach (int i in number)
+            {
+                Console.Write(i + "  ");
+                if (i == dig)
+                {
+                    counter++;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Counter number " + dig + " = " + counter);
+        }
+    }
+}
