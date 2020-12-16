@@ -1,0 +1,85 @@
+//10.Разработать приложение, в котором бы сравнивалось
+//   население трёх столиц из разных стран Причём страна бы обозначалась пространством имён, а город —
+//   классом в данном пространстве.
+
+using System;
+
+namespace HomeWork
+{
+    namespace Italy
+    {
+        class Rome
+        {
+            public int population = 2873000;
+        }
+    }
+
+    namespace Ukriana
+    {
+        class Kiev
+        {
+            public int population = 2884000;
+        }
+    }
+
+    namespace USA
+    {
+        class Washington
+        {
+            public int population = 705749;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            USA.Washington obj1 = new USA.Washington();
+            Ukriana.Kiev obj2 = new Ukriana.Kiev();
+            Italy.Rome obj3 = new Italy.Rome();
+            Console.WriteLine("Which capitals do you like to compare?");
+            Console.WriteLine("1. USA.Washington and Ukriana.Kiev]\n2. USA.Washington and Italy.Rome\n3. Ukriana.Kiev and Italy.Rome");
+            int k = int.Parse(Console.ReadLine());
+            switch(k)
+            {
+                case 1:
+                    if(obj1.population> obj2.population)
+                    {
+                        Console.WriteLine("USA.Washington > Ukriana.Kiev");
+                        Console.WriteLine(obj1.population+" > "+obj2.population);
+                    }
+                else
+                    { 
+                        Console.WriteLine("USA.Washington < Ukriana.Kiev");
+                        Console.WriteLine(obj1.population + " < " + obj2.population);
+                    }
+                    break;
+
+                case 2:
+                    if (obj1.population > obj3.population)
+                    {
+                        Console.WriteLine("USA.Washington >  Italy.Rome");
+                        Console.WriteLine(obj1.population + " > " + obj3.population);
+                    }
+                    else
+                    {
+                        Console.WriteLine("USA.Washington < Ukriana.Kiev");
+                        Console.WriteLine(obj1.population + " < " + obj3.population);
+                    }
+                    break;
+                case 3:
+                    if (obj2.population > obj3.population)
+                    {
+                        Console.WriteLine("Ukriana.Kiev > Italy.Rome");
+                        Console.WriteLine(obj2.population + " > " + obj3.population);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ukriana.Kiev < Italy.Rome");
+                        Console.WriteLine(obj2.population + " < " + obj3.population);
+                    }
+                    break;
+            }
+        }
+    }
+}
