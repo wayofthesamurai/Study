@@ -1,0 +1,148 @@
+//9.Разработайте приложение «7 чудес света», где каждое
+//  чудо будет представлено отдельным классом Создайте дополнительный класс, содержащий точку входа
+//  Распределите приложение по файлам проекта и с помощью пространства имён обеспечьте возможность
+//  взаимодействия классов.
+
+-------------------------------------------------------------
+FirstWorldMiracle.cs
+
+using System;
+namespace FirstWorldMiracle
+{
+    class FirstWorldMiracle1
+    {
+        public string first = "Great Pyramid of Giza";
+        public void Print()
+        {
+            Console.WriteLine("1 - " + first);
+        }
+    }
+}
+-------------------------------------------------------------
+SecondWorldMiracle.cs
+
+using System;
+namespace SecondWorldMiracle
+{
+    class SecondWorldMiracle2
+    {
+        public string second = "Hanging Gardens of Babylon";
+    }
+}
+--------------------------------------------------------------
+ThirdWorldMiracle.cs
+
+using System;
+namespace ThirdWorldMiracle
+{
+    class ThirdWorldMiracle3
+    {
+        public string third = "Statue of Zeus at Olympia";
+
+    }
+}
+--------------------------------------------------------------
+FourthWorldMiracle.cs
+
+using System;
+namespace FourthWorldMiracle
+{
+    class FourthWorldMiracle4
+    {
+        public string fourth = "Temple of Artemis at Ephesus";
+    }
+}
+-------------------------------------------------------------
+FifthWorldMiracle.cs
+using System;
+namespace FifthWorldMiracle
+{
+    class FifthWorldMiracle5
+    {
+        public string fifth = "Mausoleum at Halicarnassus";
+    }
+}
+--------------------------------------------------------------
+SixthWorldMiracle.cs
+
+using System;
+namespace SixthWorldMiracle
+{
+    class SixthWorldMiracle6
+    {
+        public string sixth = "Colossus of Rhodes";
+    }
+}
+--------------------------------------------------------------
+SeventhWorldMiracle.cs
+
+using System;
+namespace SeventhWorldMiracle
+{
+    class SeventhWorldMiracle7
+    {
+        public string seventh = "Lighthouse of Alexandria";
+    }
+}
+-------------------------------------------------------------
+EndPoind.cs
+
+using System;
+using FirstWorldMiracle;
+using SecondWorldMiracle;
+using ThirdWorldMiracle;
+using FourthWorldMiracle;
+using FifthWorldMiracle;
+using SixthWorldMiracle;
+using SeventhWorldMiracle;
+
+namespace DemoCS_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int k;
+            do
+            {
+                Console.WriteLine("Choose the name of which world miracle do you want to know ? ");
+                Console.WriteLine("1\n2\n3\n4\n5\n6\n7\n");
+                k = int.Parse(Console.ReadLine());
+                switch (k)
+                {
+                    case 1:
+                        FirstWorldMiracle1 obj1 = new FirstWorldMiracle1();
+                        obj1.Print();
+                        break;
+                    case 2:
+                        SecondWorldMiracle2 obj2 = new SecondWorldMiracle2();
+                        Console.Write(k + " - " + obj2.second);
+                        break;
+                    case 3:
+                        ThirdWorldMiracle3 obj3 = new ThirdWorldMiracle3();
+                        Console.WriteLine(k + " - " + obj3.third);
+                        break;
+                    case 4:
+                        FourthWorldMiracle4 obj4 = new FourthWorldMiracle4();
+                        Console.WriteLine(k + " - " + obj4.fourth);
+                        break;
+                    case 5:
+                        FifthWorldMiracle5 obj5 = new FifthWorldMiracle5();
+                        Console.WriteLine(k + " - " + obj5.fifth);
+                        break;
+                    case 6:
+                        SixthWorldMiracle6 obj6 = new SixthWorldMiracle6();
+                        Console.WriteLine(k + " - " + obj6.sixth);
+                        break;
+                    case 7:
+                        SeventhWorldMiracle7 obj7 = new SeventhWorldMiracle7();
+                        Console.WriteLine(k + "7 - " + obj7.seventh);
+                        break;
+                }
+                Console.WriteLine();
+            } while (k > 0 || k < 7);
+        }
+    }
+}
+
+
