@@ -1,0 +1,261 @@
+// 1 Описать структуру Article, содержащую следующие
+//   поля: код товара; название товара; цену товара
+//
+// 2 Описать структуру Client содержащую поля: код
+//   клиента; ФИО; адрес; телефон; количество заказов
+//   осуществленных клиентом; общая сумма заказов клиента
+//
+// 3 Описать структуру RequestItem содержащую поля:
+//   товар; количество единиц товара
+//
+// 4 Описать структуру Request содержащую поля: код
+//   заказа; клиент; дата заказа; перечень заказанных товаров;
+//   сумма заказа (реализовать вычисляемым свойством)
+//
+// 5 Описать перечисление ArticleType определяющее
+//   типы товаров, и добавить соответствующее поле
+//   в структуру Article из задания №1
+//
+// 6 Описать перечисление ClientType определяющее
+//   важность клиента, и добавить соответствующее поле
+//   в структуру Client из задания №2
+//
+// 7 Описать перечисление PayType определяющее форму
+//   оплаты клиентом заказа, и добавить соответствующее
+//   поле в структуру Request из задания №4
+
+using System;
+namespace HomeWork
+{
+    struct Article
+    {
+        public int productCode;
+        public string productName;
+        public double productPrice;
+        public void Add(int _productCode, string _productName, double _productPrice)
+        {
+            productCode = _productCode;
+            productName = _productName;
+            productPrice = _productPrice;
+        }
+        public enum producttype          //тип товара
+            {
+                Toy, Vegetable, Fruit
+            }
+        public void Print()
+        {
+            Console.WriteLine(" Code: " + productCode);
+            Console.WriteLine(" Name: " + productName);
+            Console.WriteLine("Price: " + productPrice);
+            Console.WriteLine("-----------------------------------------");
+        }
+    }
+
+    struct Client
+    {
+        private int clientCode;
+        public string fio;
+        public int phone;
+        public string address;
+        public int czoClient;            //количество заказов существленных клиентом
+        public double oszClient;         //общая сумма заказов клиента
+        public void Add(int _clientCode, string _fio, int _phone, string _address, int _czoClient, double _oszclient)
+        {
+            clientCode = _clientCode;
+            fio = _fio;
+            phone = _phone;
+            address = _address;
+            czoClient = _czoClient;    //количество заказов oсуществленных клиентом
+            oszClient = _oszclient;
+        }
+        public enum clienttype          //тип товара
+        {
+            Vip, Ordinary
+        }
+        public void Print()
+        {
+            Console.WriteLine("   Code: " + clientCode);
+            Console.WriteLine("    FIO: " + fio);
+            Console.WriteLine("  Phone: " + phone);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("   CZOC: " + czoClient + "  (colichestvo zakazov clienta)");
+            Console.WriteLine("   OSZC: " + oszClient + "  (obschaya summa zakazov clienta)");
+            Console.WriteLine("------------------------------------------------------------");
+        }
+    }
+
+    struct RequestItem
+    {
+        public string prodact;
+        public int countProdact;        //количество единиц товара
+    }
+
+    struct Reauest
+    {
+        public int codprodact;
+        public int Client;
+        public string dateZakaza;
+        public string pzProdact;        //перечень заказанных товаров
+        public double summaZakaza;      //сумма заказа (реализовать вычисляемым свойством)
+
+        public void Add(int _codprodact, int _Client, string _dateZakaza, string _pzProdact, double _summaZakaza)
+        {
+            codprodact = _codprodact;
+            Client = _Client;
+            dateZakaza = _dateZakaza;
+            pzProdact = _pzProdact;
+            summaZakaza = _summaZakaza;
+        }
+        public enum paytype
+        {
+            Cash, Card, PayPass
+        }
+        public void Print()
+        {
+            Console.WriteLine("   Code: " + codprodact);
+            Console.WriteLine(" Client: " + Client);
+            Console.WriteLine("   Data: " + dateZakaza);
+            Console.WriteLine("    PZP: " + pzProdact);
+            Console.WriteLine("  Summa: " + summaZakaza);
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            Article product1 = new Article(); Article product2 = new Article(); Article product3 = new Article();
+            Article product4 = new Article(); Article product5 = new Article(); Article product6 = new Article();
+            product1.Add(1001, "Sparja", 1.50);
+            product2.Add(2002, "Model Car", 5.0);
+            product3.Add(3003, "Banana", 2.25);
+            product4.Add(1004, "Carrot", 1.90);
+            product5.Add(2005, "Model Helicopter", 20.75);
+            product6.Add(3006, "Apple", 1.25);
+            //-----------------------------------------------------------------------
+            Client client1 = new Client(); Client client2 = new Client();
+            client1.Add(18, "Kostilyov Ander Igorevich", 38066355, "Gorkogo 3", 5, 11.90);
+            client2.Add(11, "Boyko Nikita Igorevich", 38066244, "Miry 12", 25, 119.25);
+            //-----------------------------------------------------------------------
+            Reauest reauest1 = new Reauest(); Reauest reauest2 = new Reauest(); Reauest reauest3 = new Reauest();
+            reauest1.Add(2002 + '\n' + 2005, 11, "11.11.20", "1.Model Car\n2.Model Helicapter", 25.75);
+            reauest2.Add(1001 + '\n' + 1001, 18, "12.11.20", "1.Sparja\n2.Carrot", 3.40);
+            reauest3.Add(3003 + '\n' + 3006, 18, "13.11.20", "1.Banana\n2.Apple", 3.50);
+            //-----------------------------------------------------------------------
+            #region Client
+            Console.WriteLine("Choose client type:\n1.VIP\n2.Ordinary\n0.Exit");
+            number = Int32.Parse(Console.ReadLine());
+            if (number > 0 && number < 3)
+            {
+                Client.clienttype clienttype = (Client.clienttype)
+                Enum.GetValues(typeof(Client.clienttype)).GetValue(number - 1);
+                switch (clienttype)
+                {
+                    case Client.clienttype.Vip:
+                        Console.WriteLine($"\t\tType: {clienttype}");
+                        client2.Print();
+                        break;
+                    case Client.clienttype.Ordinary:
+                        Console.WriteLine($"\t\tType: {clienttype}");
+                        client1.Print();
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Exit");
+            }
+            #endregion
+            //-----------------------------------------------------------------------
+            #region Articule
+            do
+            {
+                Console.WriteLine("Enter number\n1\n2\n3\n0.Exit");
+                number = Int32.Parse(Console.ReadLine());
+                if (number > 0 && number < 4)
+                {
+                    Article.producttype type = (Article.producttype)
+                    Enum.GetValues(typeof(Article.producttype)).GetValue(number - 1);
+                    switch (type)
+                    {
+                        case Article.producttype.Vegetable:
+                            Console.WriteLine($"\t\tType: {type}");
+                            product1.Print();
+                            product4.Print();
+                            break;
+                        case Article.producttype.Toy:
+                            Console.WriteLine($"\t\tType: {type}");
+                            product2.Print();
+                            product5.Print();
+                            break;
+                        case Article.producttype.Fruit:
+                            Console.WriteLine($"\t\tType: {type}");
+                            product3.Print();
+                            product6.Print();
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Exit");
+                }
+            } while (number > 0 && number < 4);
+            Console.WriteLine();
+            #endregion
+            //-----------------------------------------------------------------------
+            #region Pay
+            void pay(int check)
+            {
+                switch (check)
+                {
+                    case 1:
+                        reauest1.Print();
+                        break;
+                    case 2:
+                        reauest2.Print();
+                        break;
+                    case 3:
+                        reauest3.Print();
+                        break;
+                }
+            }
+            int check;
+            Console.WriteLine("Choose Check:");
+            Console.WriteLine('1'); reauest1.Print();
+            Console.WriteLine('2'); reauest2.Print();
+            Console.WriteLine('3'); reauest3.Print();
+            check = int.Parse(Console.ReadLine());
+            Console.WriteLine("Choose PayType\n1.Cash\n2.Card\n3.PayPass\n0.Exit");
+            number = Int32.Parse(Console.ReadLine());
+            if (number > 0 && number < 4)
+            {
+                Reauest.paytype paytype = (Reauest.paytype)
+                Enum.GetValues(typeof(Reauest.paytype)).GetValue(number - 1);
+                switch (paytype)
+                {
+                    case Reauest.paytype.Cash:
+                        Console.WriteLine($"\t\tType: {paytype}");
+                        pay(check);
+                        break;
+                    case Reauest.paytype.Card:
+                        Console.WriteLine($"\t\tType: {paytype}");
+                        pay(check);
+                        break;
+                    case Reauest.paytype.PayPass:
+                        Console.WriteLine($"\t\tType: {paytype}");
+                        pay(check);
+                        break;
+                }
+                Console.WriteLine("\t\tDone!");
+            }
+            else
+            {
+                Console.WriteLine("Error!");
+            }
+        }   
+            #endregion
+            //-----------------------------------------------------------------------      
+    }
+}
