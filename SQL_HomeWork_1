@@ -1,0 +1,324 @@
+// В Базах данный "Библиотека" и "Школа" расставить индексы
+
+1)
+CREATE DATABASE _Library;
+GO
+USE _Library;
+GO
+
+CREATE TABLE Faculty(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  CONSTRAINT PK_Faculties PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Groups(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  SpecId INT NOT NULL,
+  CONSTRAINT PK_Groups PRIMARY KEY(Id),
+  CONSTRAINT FK_Group_Faculty FOREIGN KEY (SpecId) REFERENCES Faculty(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE,
+  UNIQUE(Name)
+);
+
+CREATE TABLE Students(
+  Id INT IDENTITY,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NOT NULL,
+  MiddleName NVARCHAR (50) NULL,  
+  GroupId INT,
+  CONSTRAINT PK_Student PRIMARY KEY(Id),
+  CONSTRAINT FK_Student_Group FOREIGN KEY (GroupId) REFERENCES Groups(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+CREATE TABLE Logbooks(
+  Id INT,
+  Number BIGINT NOT NULL,
+  CONSTRAINT PK_Logbook PRIMARY KEY(Id),
+  CONSTRAINT FK_Logbook_Student FOREIGN KEY (Id) REFERENCES Students(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE SPhones(
+  Id INT IDENTITY,
+  Number BIGINT NOT NULL,
+  StudentId INT NOT NULL,
+  CONSTRAINT PK_SPhones PRIMARY KEY(Id),
+  CONSTRAINT FK_Phone_Student FOREIGN KEY (StudentId) REFERENCES Students(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Departments(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Teachers(
+  Id INT IDENTITY,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NOT NULL,
+  MiddleName NVARCHAR (50) NULL,
+  DepartmentId INT NOT NULL,
+  CONSTRAINT PK_Teacher PRIMARY KEY(Id),
+  CONSTRAINT FK_Teacher_Department FOREIGN KEY (DepartmentId) REFERENCES Departments(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+CREATE TABLE Authors(
+  Id INT IDENTITY,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NULL,
+  MiddleName NVARCHAR (50) NULL,
+  PRIMARY KEY(Id)
+);
+
+CREATE TABLE Press(
+  Id INT IDENTITY,
+  Name NVARCHAR (250) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Themes(
+  Id INT IDENTITY,
+  Name NVARCHAR (250) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Categories(
+  Id INT IDENTITY,
+  Name NVARCHAR (250) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Books(
+  Id INT IDENTITY,
+  Name NVARCHAR(260) NOT NULL,
+  PressId INT NOT NULL,
+  CategoryId INT NOT NULL,
+  ThemeId INT NOT NULL,
+  Quantity INT NOT NULL DEFAULT(1),
+  Year INT NOT NULL,
+  Pages INT NOT NULL,
+  FOREIGN KEY (PressId) REFERENCES Press(Id),
+  FOREIGN KEY (ThemeId) REFERENCES Themes(Id),
+  FOREIGN KEY (CategoryId) REFERENCES Categories(Id),
+  PRIMARY KEY(Id)
+);
+
+
+CREATE TABLE BookAuthor(
+  AuthorId INT NOT NULL,
+  BookId INT NOT NULL,
+  FOREIGN KEY (AuthorId) REFERENCES Authors(Id),
+  FOREIGN KEY (BookId) REFERENCES Books(Id),
+  PRIMARY KEY(AuthorId, BookId)
+);
+
+
+CREATE TABLE ISBN(
+  Id INT IDENTITY,
+  ISBN CHAR(13) NOT NULL,
+  PRIMARY KEY(Id),
+  FOREIGN KEY(Id) REFERENCES Books(Id),
+  UNIQUE (ISBN)
+);
+
+
+CREATE TABLE Users(
+  Id INT IDENTITY,
+    Login VARCHAR(32) NOT NULL,
+  Passwd CHAR(128) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE (Login)
+);
+
+
+CREATE TABLE Librarians(
+  Id INT,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NOT NULL,
+  MiddleName NVARCHAR (50) NULL,
+  PRIMARY KEY(Id),
+  FOREIGN KEY (Id) REFERENCES Users (Id)
+);
+
+CREATE TABLE SCards(
+  Id INT IDENTITY,
+  StudentId INT NOT NULL,
+  BookId INT NOT NULL,
+  LibId INT NOT NULL,
+  DateOut SMALLDATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP),
+  DateIn SMALLDATETIME NULL,
+  PRIMARY KEY(Id),
+    FOREIGN KEY (StudentId) REFERENCES Students (Id),
+  FOREIGN KEY (BookId) REFERENCES Books (Id),
+  FOREIGN KEY (LibId) REFERENCES Librarians (Id),
+  CHECK (DATEDIFF ( ss , DateOut , DateIn ) > 1)
+);
+CREATE TABLE TCards(
+  Id INT IDENTITY,
+  TeacherId INT NOT NULL,
+  BookId INT NOT NULL,
+  LibId INT NOT NULL,
+  DateOut SMALLDATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP),
+  DateIn SMALLDATETIME NULL,
+  PRIMARY KEY(Id),
+    FOREIGN KEY (TeacherId) REFERENCES Teachers (Id),
+  FOREIGN KEY (BookId) REFERENCES Books (Id),
+  FOREIGN KEY (LibId) REFERENCES Librarians (Id),
+  CHECK (DATEDIFF ( ss , DateOut , DateIn ) > 1)
+);
+
+create index Themeids on books(themeid);
+create index Autorss on authors(firstName, lastName);
+create index Categoriess on categories(name);
+create index Themess on themes(name);
+create index Presss on press(name);
+create index Departmentss on departments(name);
+create index TCardss on tcards(bookid);
+create index SCardss on scards(bookid);
+create index Studentss on students(firstNAme, lastName);
+create index GroupsName on groups(Name);
+create index FacultyName on faculty(Name);
+create index Teacherss on teachers(firstname, lastname);
+create index Librarianss on librarians(firstname, lastname);
+------------------------------------------------------------------------------------------
+
+2)
+CREATE DATABASE _School;
+GO
+USE _School;
+GO
+
+CREATE TABLE Spec(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  CONSTRAINT PK_Faculties PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Groups(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  SpecId INT NOT NULL,
+  CONSTRAINT PK_Groups PRIMARY KEY(Id),
+  CONSTRAINT FK_Group_Spec FOREIGN KEY (SpecId) REFERENCES Spec(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE,
+  UNIQUE(Name)
+);
+
+CREATE TABLE Students(
+  Id INT IDENTITY,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NOT NULL,
+  MiddleName NVARCHAR (50) NULL,  
+  GroupId INT,
+  CONSTRAINT PK_Student PRIMARY KEY(Id),
+  CONSTRAINT FK_Student_Group FOREIGN KEY (GroupId) REFERENCES Groups(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+CREATE TABLE SINN(
+  Id INT,
+  INN CHAR(10) NOT NULL,
+  PRIMARY KEY(Id),
+  FOREIGN KEY (Id) REFERENCES Students(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Logbooks(
+  Id INT,
+  Number BIGINT NOT NULL,
+  CONSTRAINT PK_Logbook PRIMARY KEY(Id),
+  CONSTRAINT FK_Logbook_Student FOREIGN KEY (Id) REFERENCES Students(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE SPhones(
+  Id INT IDENTITY,
+  Number BIGINT NOT NULL,
+  StudentId INT NOT NULL,
+  CONSTRAINT PK_SPhones PRIMARY KEY(Id),
+  CONSTRAINT FK_Phone_Student FOREIGN KEY (StudentId) REFERENCES Students(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Departments(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE(Name)
+);
+
+CREATE TABLE Teachers(
+  Id INT IDENTITY,
+  FirstName NVARCHAR (50) NOT NULL,
+  LastName NVARCHAR (50) NOT NULL,
+  MiddleName NVARCHAR (50) NULL,
+  DepartmentId INT NOT NULL,
+  CONSTRAINT PK_Teacher PRIMARY KEY(Id),
+  CONSTRAINT FK_Teacher_Department FOREIGN KEY (DepartmentId) REFERENCES Departments(Id)
+  ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+CREATE TABLE TINN(
+  Id INT,
+  INN CHAR(10) NOT NULL,
+  PRIMARY KEY(Id),
+  FOREIGN KEY (Id) REFERENCES Teachers(Id)
+  ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE TPhones(
+  Id INT IDENTITY,
+  Number BIGINT NOT NULL,
+  TeacherId INT NOT NULL,
+  PRIMARY KEY(Id),
+  FOREIGN KEY (TeacherId) REFERENCES Teachers(Id) ON UPDATE CASCADE
+);
+
+CREATE TABLE Subjects(
+  Id INT IDENTITY,
+  Name NVARCHAR (50) NOT NULL,
+  ShortName NVARCHAR (50) NOT NULL,
+  PRIMARY KEY(Id),
+  UNIQUE (Name),
+  UNIQUE (ShortName)
+);
+
+CREATE TABLE TeachSubj(  
+  TeacherId INT NOT NULL,
+  SubjectId INT NOT NULL, 
+  PRIMARY KEY(TeacherId, SubjectId),
+  FOREIGN KEY (TeacherId) REFERENCES Teachers(Id),
+  FOREIGN KEY (SubjectId) REFERENCES Subjects(Id)
+);
+
+CREATE TABLE Marks(
+  Id INT IDENTITY,
+  TeacherId INT NOT NULL,
+  SubjectId INT NOT NULL, 
+  StudentId INT NOT NULL,
+  Mark INT NOT NULL,
+  DateOf SMALLDATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (Id),
+  FOREIGN KEY (TeacherId, SubjectId) REFERENCES TeachSubj(TeacherId, SubjectId),
+  FOREIGN KEY (StudentId) REFERENCES Students(Id),
+  CHECK (Mark BETWEEN 1 AND 12)
+);
+
+create index Studentss on students(firstname,lastname);
+create index Groupss on groups(name);
+create index Specs on spec(name);
+create index Departmentss on departments(name);
+create index Subjectss on subjects(name);
+create index Teacherss on teachers(firstname, lastname);
+create index Markss on marks(mark);
