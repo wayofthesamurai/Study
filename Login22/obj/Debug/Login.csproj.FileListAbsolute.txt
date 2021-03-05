@@ -1,0 +1,13 @@
+C:\Users\ADMIN\source\repos\Login22\Login22\bin\Debug\Login22.exe.config
+C:\Users\ADMIN\source\repos\Login22\Login22\bin\Debug\Login22.exe
+C:\Users\ADMIN\source\repos\Login22\Login22\bin\Debug\Login22.pdb
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.LoginForm.resources
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.MainForm.resources
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.exe
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.pdb
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.CreateUser.resources
+C:\Users\ADMIN\source\repos\Login22\Login22\obj\Debug\Login22.ShowUsers.resources
