@@ -1,0 +1,10 @@
+C:\Users\ADMIN\source\repos\Anketa\Anketa\bin\Debug\Anketa.exe.config
+C:\Users\ADMIN\source\repos\Anketa\Anketa\bin\Debug\Anketa.exe
+C:\Users\ADMIN\source\repos\Anketa\Anketa\bin\Debug\Anketa.pdb
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.Form1.resources
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.exe
+C:\Users\ADMIN\source\repos\Anketa\Anketa\obj\Debug\Anketa.pdb
