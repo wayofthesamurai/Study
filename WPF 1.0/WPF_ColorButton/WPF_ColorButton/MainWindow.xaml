@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPF_ColorButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_ColorButton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel HorizontalAlignment="Left">
+            <Button Content="Navy" Margin="3" Foreground="Navy"></Button>
+            <Button Content="blue" Margin="3" Foreground="Blue"></Button>
+            <Button Content="Aqua" Margin="3" Foreground="Aqua"></Button>
+            <Button Content="Teal" Margin="3" Foreground="Teal"></Button>
+            <Button Content="Olive" Margin="3" Foreground="Olive"></Button>
+            <Button Content="Green" Margin="3" Foreground="Green"></Button>
+            <Button Content="Lime" Margin="3" Foreground="Lime"></Button>
+            <Button Content="Yellow" Margin="3" Foreground="Yellow"></Button>
+            <Button Content="Orange" Margin="3" Foreground="Orange"></Button>
+            <Button Content="Red" Margin="3" Foreground="Red"></Button>
+            <Button Content="Maroon" Margin="3" Foreground="Maroon"></Button>
+            <Button Content="Fuchsia"  Margin="3" Foreground="Fuchsia"></Button>
+            <Button Content="Purple" Margin="3" Foreground="Purple"></Button>
+            <Button Content="Black" Margin="3" Foreground="Black"></Button>
+            <Button Content="Silver" Margin="3" Foreground="Silver"></Button>
+            <Button Content="Gray" Margin="3" Foreground="Gray"></Button>
+            <Button Content="White" Margin="3" Foreground="White"></Button>
+        </WrapPanel>
+    </Grid>
+</Window>
