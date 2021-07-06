@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body 
+        {
+            font-family: Arial;
+            font-size: 15px;
+            margin:10px auto;
+            max-width: 1200px;
+            min-width: 768px;
+        }
+        .card
+        {
+            width:21%;
+            min-width:250px;
+            margin: 10px;
+            border: 2px dotted;
+            border-color:#cdcdcd;
+            padding: 10px;
+            float:left;
+            min-height:170px;
+        }
+        .cardinside 
+        {
+            float: left;
+            border: 1px solid;
+            border-color: #cdcdcd;
+            color: #cdcdcd;
+            width: 35px;
+            height: 20px;
+            text-align: center;
+            margin: 5px 10px 5px 5px;
+            padding: 10px 10px 13px 10px;
+            font-size: 20px;            
+        }
+        h3 
+        {
+            color: #c9c9c9;
+            margin-top: 10px;
+        }
+        h4 
+        {
+            color: #c9c9c9;
+            padding:0px 0px 14px;
+            margin: 30px 5px 5px 5px;
+        }
+        p
+        {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="card">
+            <div class="cardinside">♠</div>
+            <h3>Photogrqaphy</h3>
+            <h4>qui officia deserunt</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. production
+            </p>
+        </div>
+        <div class="card">
+            <div class="cardinside">♣</div>
+            <h3>Production</h3>
+            <h4>Quis autem vel eum iure</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Montage
+            </p>
+        </div>
+        <div class="card">
+            <div class="cardinside">♥</div>
+            <h3>Montage</h3>
+            <h4>Et harum quidem</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Staging Light
+            </p>
+        </div>
+        <div class="card">
+            <div class="cardinside">♦</div>
+            <h3>Staging Light</h3>
+            <h4>Occaecat cupidatat non</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. more info
+            </p>
+        </div>
+    </section>
+</body>
+</html>
