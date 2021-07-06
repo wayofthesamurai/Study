@@ -1,0 +1,10 @@
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\bin\Debug\ExamenSystem2.exe.config
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\bin\Debug\ExamenSystem2.exe
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\bin\Debug\ExamenSystem2.pdb
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.Form1.resources
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.exe
+C:\Users\ADMIN\source\repos\ExamenSystem2\ExamenSystem2\obj\Debug\ExamenSystem2.pdb
