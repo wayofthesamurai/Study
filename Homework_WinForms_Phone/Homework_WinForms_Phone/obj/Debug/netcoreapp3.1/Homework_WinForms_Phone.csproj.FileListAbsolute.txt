@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.exe
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.deps.json
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.runtimeconfig.json
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.runtimeconfig.dev.json
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.dll
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\bin\Debug\netcoreapp3.1\Homework_WinForms_Phone.pdb
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.Phone.resources
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.dll
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.pdb
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\Homework_WinForms_Phone\Homework_WinForms_Phone\obj\Debug\netcoreapp3.1\Homework_WinForms_Phone.csproj.AssemblyReference.cache
