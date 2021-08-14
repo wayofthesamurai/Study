@@ -1,0 +1,9 @@
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\bin\Release\Exam_Messenger.exe.config
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\bin\Release\Exam_Messenger.exe
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\bin\Release\Exam_Messenger.pdb
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.Form1.resources
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.exe
+C:\Users\ADMIN\source\repos\Exam_Messenger\Exam_Messenger\obj\Release\Exam_Messenger.pdb
