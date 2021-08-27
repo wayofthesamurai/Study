@@ -1,0 +1,123 @@
+body {
+    font-family: Montserrat, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+.container {
+    color:#ffffff;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.navbar-header{
+    float:left;
+}
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
+}
+.navbar-nav > li {
+    float: left;
+}
+fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+/*------------------------------------------------------------------*/
+.BLOG h1, .BLOG .h1 {
+    font-size: 63px;
+    /*padding:50px;*/
+}
+.BLOG {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+}
+.text-center{
+    text-align:center;
+}
+/*-----------------------------------------------------------------*/
+.Number {
+    color: black;
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 4px;
+}
+.card-title{
+    color:#000000;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #f4511e;
+    border-color: #f4511e;
+}
+.card {
+    float: left;
+    margin: 10px;
+    padding: 10px 5px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.col-sm-4{
+    color:#000000;
+    padding:0px;
+
+}
+.LastPost{
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    font-size:45px;
+    padding-top:-20px;
+    letter-spacing: 4px;
+    padding: 0px;
+    margin:0px;
+}
+.Bottom-line{
+    border-bottom: solid;
+    border-color: #d3d3d3;
+    border-width: 1px;
+    padding-bottom:10px;
+}
+.post {
+    padding-top: 10px;
+    font-size: 10px;
+    text-decoration: none;
+}
+.btn {
+    color: #000000;
+    border-radius: 5px;
+    background-color: #f4511e;
+    margin: 2px;
+}
+.search h5{
+    color:#808080;
+}
